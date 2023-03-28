@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { BsSearch } from 'react-icons/bs';
+import Photo from '../CardPhoto/Photo';
+import logo from '../../assets/logo.png'
 
 export default function SearchBar() {
 
@@ -29,25 +32,27 @@ const submit = e => {
 
 
   return (
-    <div>
-      <div className="App">
+      <div className="container_form">
+      <div className='image'>
+        <img src={logo} alt=''/>
+      </div>
     <form onSubmit={submit}>
       <input
         onChange={handleChange}
       />
-      <button type='submit'>buscar</button>
+      <button type='submit'><BsSearch size={20}/></button>
     </form>
+    <div className='photos_container'>
       {
-        photos.map((p)=> {
+        photos.map((photo)=> {
           return (
             <>
-            <h1>{p.alt_description}</h1>
-            <img src={p.urls.regular}/>
+            <Photo photo={photo}/>
             </>
           )
         })
       }
-    </div>
+      </div>
     </div>
   )
 }

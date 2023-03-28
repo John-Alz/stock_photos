@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import PhotosHome from './components/home/PhotosHome';
+import SearchBar from './components/SearchBar/SearchBar';
 
 function App() {
 
 
 
   return (
-    <div className="App">
+    <div>
+    <SearchBar/>
     <PhotosHome/>
     </div>
   )
